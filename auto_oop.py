@@ -32,13 +32,19 @@ class Auto:
         return self.speed
 
 
+class Van(Auto):
+    def __init__(self, model, max_speed, seats=7):
+        super().__init__(model, max_speed)
+        self.seats = seats
+
+
 fiat = Auto('Tipo', 240)
 bmw = Auto('e46', 170)
-ford = Auto('Transit', 90)
+ford = Van('Transit', 90)
 
 
 def run(car):
-    print(car)
+    print(car.model, car.speed, car.max_speed, car.engine)
     print(car.speed_up(200))
     print(car.start_engine())
     print(car.speed_up(200))
@@ -51,3 +57,4 @@ run(bmw)
 print('----------------------')
 print(Auto.start_engine(fiat))
 print('----------------------')
+run(ford)
