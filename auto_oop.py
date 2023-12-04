@@ -9,11 +9,14 @@ class Auto:
         if not self.engine:
             self.engine = True
             print('engine is working')
+        else:
+            print('engine already started')
         return self.engine
 
     def stop_engine(self):
         if self.speed == 0:
             self.engine = False
+            print('engine stopped')
         else:
             print('slow down first')
         return self.engine
